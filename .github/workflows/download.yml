@@ -1,0 +1,81 @@
+# example 1: on push to master
+name: 下载文档并发布
+on:
+  push:
+    paths:
+      - 'change.log'
+  schedule:
+    - cron: '0 15 * * *'
+env:
+  TZ: 'Asia/Shanghai'
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    # permissions:
+    #   contents: write
+    #   packages: write
+    steps:
+      - name: Checkout Github Code
+        uses: actions/checkout@v3
+
+      - name: 生成环境变量
+        run: |
+          echo "GITHUB_MY_TAG=$(date +v%Y.%m.%d%H%M)" >> $GITHUB_ENV
+          echo "GITHUB_CACHE_KEY=$(date +v%Y-%m-%d-%H)" >> $GITHUB_ENV
+          echo "GITHUB_CACHE_KEY_D=$(date +v%Y-%m-%d-)" >> $GITHUB_ENV
+          echo "GITHUB_CACHE_KEY_M=$(date +v%Y-%m-)" >> $GITHUB_ENV
+      - name: 输出生成环境变量
+        run: |
+          echo ${{ env }}
+      - uses: actions/cache@v3
+        id: cache
+        with:
+          path: |
+            output
+            dist
+          key: ${{ env.GITHUB_CACHE_KEY }}
+          restore-keys: |
+            ${{ env.GITHUB_CACHE_KEY_D }}
+            ${{ env.GITHUB_CACHE_KEY_M }}
+            cache-key
+      - name: Autotag
+        uses: cardinalby/git-tag-action@master
+        env:
+          TAG: ${{ env.GITHUB_MY_TAG }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: 准备环境
+        run: |
+          echo ${{ env.GITHUB_MY_TAG }}
+          sudo apt update
+          sudo apt install ttf-wqy-zenhei
+          fc-cache -f -v
+          ls -la
+          rm -rf output/goframe-latest
+          # ls -la output
+      - name: download doc
+        run: |
+          doc2pdf gf
+      - name: show files
+        run: |
+          ls -la
+          ls -la dist
+      - name: Create Github Release
+        id: create_release
+        uses: softprops/action-gh-release@v0.1.15
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: '${{ env.GITHUB_MY_TAG }}'
+          name: '${{ env.GITHUB_MY_TAG }}'
+          draft: false
+          prerelease: false
+          files: |
+            dist/goframe-v1.14.pdf
+            dist/goframe-v1.15.pdf
+            dist/goframe-v1.16.pdf
+            dist/goframe-v2.0.pdf
+            dist/goframe-v2.1.pdf
+            dist/goframe-v2.2.pdf
+            dist/goframe-v2.3.pdf
+            dist/goframe-v2.4.pdf
+            dist/goframe-latest.pdf
