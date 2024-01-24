@@ -54,7 +54,7 @@ jobs:
           # ls -la output
       - name: download doc
         run: |
-          doc2pdf gf
+          ./doc2pdf gf
       - name: show files
         run: |
           ls -la
