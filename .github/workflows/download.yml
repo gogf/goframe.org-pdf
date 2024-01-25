@@ -43,6 +43,10 @@ jobs:
         env:
           TAG: ${{ env.GITHUB_MY_TAG }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set Up Golang Environment
+        uses: actions/setup-go@v4
+        with:
+          go-version: 1.20.4
       - name: 准备环境
         run: |
           echo ${{ env.GITHUB_MY_TAG }}
@@ -50,11 +54,14 @@ jobs:
           sudo apt install ttf-wqy-zenhei
           fc-cache -f -v
           ls -la
+          # 清除最新版的下载目录
           rm -rf output/goframe-latest
           # ls -la output
+          # 下载工具
+          go install github.com/hailaz/doc2pdf/cmd/doc2pdf@latest
       - name: download doc
         run: |
-          ./doc2pdf gf
+          doc2pdf gf all
       - name: show files
         run: |
           ls -la
@@ -67,6 +74,7 @@ jobs:
         with:
           tag_name: '${{ env.GITHUB_MY_TAG }}'
           name: '${{ env.GITHUB_MY_TAG }}'
+          body: '按需选择下载对应版本的文档'
           draft: false
           prerelease: false
           files: |
