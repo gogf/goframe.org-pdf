@@ -81,12 +81,4 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            dist/goframe-v1.14.pdf
-            dist/goframe-v1.15.pdf
-            dist/goframe-v1.16.pdf
-            dist/goframe-v2.0.pdf
-            dist/goframe-v2.1.pdf
-            dist/goframe-v2.2.pdf
-            dist/goframe-v2.3.pdf
-            dist/goframe-v2.4.pdf
-            dist/goframe-latest.pdf
+            dist/*.pdf
