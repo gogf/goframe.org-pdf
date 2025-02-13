@@ -57,12 +57,15 @@ jobs:
           sudo apt install ttf-wqy-zenhei
           fc-cache -f -v
           ls -la
-          # 清除最新版的下载目录
-          rm -rf output/goframe-latest
-          rm -rf output/goframe-latest-with-comments
-          # ls -la output
           # 下载工具
           go install github.com/hailaz/doc2pdf/cmd/doc2pdf@latest
+      # 清除最新版的下载目录
+      - name: clean output
+        run: |
+          if [ -d "output" ]; then
+            ls -la output
+            rm -rf output
+          fi
       - name: download doc
         run: |
           doc2pdf gf
