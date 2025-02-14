@@ -58,6 +58,7 @@ jobs:
           fc-cache -f -v
           ls -la
           # 下载工具
+          go clean -modcache
           go install github.com/hailaz/doc2pdf/cmd/doc2pdf@latest
       # 清除最新版的下载目录
       - name: clean output
