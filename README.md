@@ -14,13 +14,12 @@
 
 详情请查看[Release](https://github.com/gogf/goframe.org-pdf/releases)
 
-| 文件名                                                                                        | 说明           |
-| --------------------------------------------------------------------------------------------- | -------------- |
-| [docs.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/docs.pdf)         | 开发文档完整版 |
-| docs_xxx.pdf                                                                                  | 开发文档分切版 |
-| [examples.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/examples.pdf) | 示例代码文档   |
-| [quick.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/quick.pdf)       | 快速入开始     |
-| [release.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/release.pdf)   | 版本发布记录   |
+| 文件名                                                                                        | 说明                                |
+| --------------------------------------------------------------------------------------------- | ----------------------------------- |
+| [docs.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/docs.pdf)         | 开发文档板块，docs_xxx.pdf 为分切版 |
+| [examples.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/examples.pdf) | 示例代码板块                        |
+| [quick.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/quick.pdf)       | 快速开始板块                        |
+| [release.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/release.pdf)   | 发布记录板块                        |
 
 ### [旧版 wiki 文档](https://wiki.goframe.org/display/gf)
 
