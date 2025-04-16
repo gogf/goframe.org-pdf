@@ -33,7 +33,6 @@ jobs:
         with:
           path: |
             output
-            dist
           key: ${{ env.GITHUB_CACHE_KEY }}
           restore-keys: |
             ${{ env.GITHUB_CACHE_KEY_D }}
