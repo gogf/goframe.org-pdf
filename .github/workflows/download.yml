@@ -16,7 +16,7 @@ jobs:
     #   packages: write
     steps:
       - name: Checkout Github Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: 生成环境变量
         run: |
@@ -86,3 +86,4 @@ jobs:
           prerelease: false
           files: |
             dist/*.pdf
+
