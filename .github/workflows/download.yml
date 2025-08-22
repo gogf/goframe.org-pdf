@@ -5,8 +5,8 @@ on:
   push:
     paths:
       - 'change.log'
-  schedule:
-    - cron: '0 15 * * *'
+  # schedule:
+    # - cron: '0 15 * * *'
 env:
   TZ: 'Asia/Shanghai'
 jobs:
@@ -87,5 +87,6 @@ jobs:
           prerelease: false
           files: |
             dist/*.pdf
+
 
 
