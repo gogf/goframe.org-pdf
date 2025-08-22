@@ -1,6 +1,7 @@
 # example 1: on push to master
 name: 下载文档并发布
 on:
+  repository_dispatch:
   push:
     paths:
       - 'change.log'
@@ -86,4 +87,5 @@ jobs:
           prerelease: false
           files: |
             dist/*.pdf
+
 
