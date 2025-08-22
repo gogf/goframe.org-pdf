@@ -25,7 +25,7 @@
 
 | 版本       | 下载链接                                                                                                                                       |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| 包含注释版 | [goframe-latest-with-comments.pdf](https://github.com/gogf/goframe.org-pdf/releases/download/v2024.11.042316/goframe-latest-with-comments.pdf) |
+| 包含评论版 | [goframe-latest-with-comments.pdf](https://github.com/gogf/goframe.org-pdf/releases/download/v2024.11.042316/goframe-latest-with-comments.pdf) |
 | 标准版     | [goframe-latest.pdf](https://github.com/gogf/goframe.org-pdf/releases/download/v2024.11.042316/goframe-latest.pdf)                             |
 | v2.6       | [goframe-v2.6.pdf](https://github.com/gogf/goframe.org-pdf/releases/download/v2024.11.042316/goframe-v2.6.pdf)                                 |
 | v2.5       | [goframe-v2.5.pdf](https://github.com/gogf/goframe.org-pdf/releases/download/v2024.11.042316/goframe-v2.5.pdf)                                 |
