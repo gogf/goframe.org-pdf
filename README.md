@@ -12,14 +12,14 @@
 
 ### 最新版本
 
-详情请查看[Release](https://github.com/gogf/goframe.org-pdf/releases)
-
 | 文件名                                                                                        | 说明                                |
 | --------------------------------------------------------------------------------------------- | ----------------------------------- |
 | [docs.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/docs.pdf)         | 开发文档板块<br>docs_part${N}.pdf 为分切版, 一般用于AI资料库。|
 | [examples.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/examples.pdf) | 示例代码板块                        |
 | [quick.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/quick.pdf)       | 快速开始板块                        |
 | [release.pdf](https://github.com/gogf/goframe.org-pdf/releases/latest/download/release.pdf)   | 发布记录板块                        |
+
+更多详情查看[Release](https://github.com/gogf/goframe.org-pdf/releases)
 
 ### [旧版 wiki 文档](https://wiki.goframe.org/display/gf)
 
